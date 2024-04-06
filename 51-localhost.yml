@@ -1,7 +1,6 @@
 ---
 - name: localhost demo
   hosts: kvm
-  gather_facts: yes
   vars: 
     ansible_connection: local
     ansible_python_interpreter: "{{ ansible_playbook_python }}"
@@ -9,7 +8,5 @@
     - name: print hostname
       ansible.builtin.debug:
         msg: my hostname are as {{ inventory_hostname}} and {{ ansible_hostname  }} with fqdn {{ ansible_fqdn }}
-    - name: print the IP address
-      ansible.builtin.debug: var=ansible_en01.ipv4.address
         
         
