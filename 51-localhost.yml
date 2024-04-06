@@ -8,3 +8,6 @@
     - name: print hostname
       ansible.builtin.debug:
         msg: my hostname are as {{ inventory_hostname}} and {{ ansible_hostname  }} with fqdn {{ ansible_fqdn }}
+    - name: print the IP address
+      ansible.builtin.command: "ip a"
+        
