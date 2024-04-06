@@ -1,7 +1,7 @@
 ---
 - name: hostname demo by using the facts
   hosts: nodes
-  gather_faacts: true
+  gather_facts: true
   tasks: 
   - name: print inventory_hostname
     ansible.builtin.debug:
