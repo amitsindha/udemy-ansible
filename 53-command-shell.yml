@@ -1,6 +1,7 @@
 ---
 - name: command vs shell difference
-  host: nodes
+  hosts: nodes
+  gather_facts: no
   tasks:
     - name: check up time
       ansible.builtin.command: uptime

@@ -1,6 +1,7 @@
 ---
 - name: shell module example
   hosts: nodes
+  gather_facts: no
   tasks:
     - name: list files and folders
       ansible.builtin.shell: 'ls -l *'
