@@ -1,6 +1,6 @@
 ---
 - name: pause ansible execution
-  host: nodes
+  hosts: nodes
   vars:
     wait_second: 10
   tasks:
