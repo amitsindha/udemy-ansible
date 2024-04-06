@@ -1,0 +1,9 @@
+---
+- name: Print a text/ variable during execution - Ansible debug test
+  hosts: nodes
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: Debug a message
+      ansible.builtin.debug:
+        msg: "Our fruit is {{ fruit }}"
