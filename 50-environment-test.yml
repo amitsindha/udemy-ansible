@@ -1,0 +1,15 @@
+---
+- name: remote environment variable test
+  hosts: nodes
+  gather_facts: false
+  environment:
+    EXAMPLE: test1
+  - tasks:
+      - name: display Example
+        ansible.builtin.command: "echo $EXAMPLE"
+      - name: display Example (another task)
+        ansible.builtin.command: "echo $EXAMPLE"
+        environment:
+          EXAMPLE: test2
+
+
