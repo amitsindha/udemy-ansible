@@ -1,0 +1,41 @@
+node1:
+  hosts:
+    192.168.122.63
+node2:
+  hosts:
+    192.168.122.88
+nodes:
+  children:
+    node1:
+    node2:
+ansible_contoller:
+  hosts:
+    192.168.122.172
+kvm:
+  hosts:
+    192.168.0.212
+ocphelper:
+  hosts:
+    10.10.10.2
+ocpmaster:
+  hosts:
+    10.10.10.3
+    10.10.10.4
+    10.10.10.5
+ocpworker:
+  hosts:
+    10.10.10.6
+    10.10.10.7
+    10.10.10.8
+    10.10.10.9
+openshift:
+  children:
+    kvm:
+    ocphelper:
+    ocpmaster:
+    ocpworker:
+all:
+  children:
+    openshift:
+    ansible_controller:
+    nodes:
