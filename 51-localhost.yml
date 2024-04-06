@@ -1,0 +1,9 @@
+---
+- name: localhost demo
+  hosts: kvm
+  vars: 
+    ansible_connection: local
+  tasks: 
+    - name: print hostname
+      ansible.builtin.debug:
+        msg: my hostname are as {{ inventory_hostname}} and {{ ansible_hostname  }} with fqdn {{ ansible_fqdn }}
