@@ -1,0 +1,12 @@
+---
+- name: pause ansible execution
+  host: nodes
+  vars:
+    wait_second: 10
+  tasks:
+    - name: pause ansible script for {{ wait_second | int}} secods 
+      ansible.builtin.pause:
+        seconds: "{{ wait_second | int }}"
+    - name: message
+      ansible.builtin.debug:
+        msg: "The end"
